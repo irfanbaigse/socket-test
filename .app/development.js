@@ -202,12 +202,12 @@ const developmentServer = async () => {
   const mongodbExists = commandExists.sync("mongod");
 
   if (mongodbExists) {
-    const mongoProcessId = await startMongoDB();
+    // const mongoProcessId = await startMongoDB();
     startWebpack();
-    handleSignalEvents(isWindows ? [] : [mongoProcessId]);
+    // handleSignalEvents(isWindows ? [] : [mongoProcessId]);
   } else {
     process.loader.stop();
-    warnMongoDBMissing();
+    // warnMongoDBMissing();
     process.exit(1);
   }
 };
